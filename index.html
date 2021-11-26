@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTO</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="app.js"></script>
+</head>
+
+<body class="loginbody" onload="onPageLoad()">
+
+    <div id="loader">
+        <img src="./images/OTOBig.png" alt="OTOLogo">
+        <div class="spinloader"></div>
+    </div>
+
+
+
+
+
+    <div class="container">
+
+        <div class="loginbg">
+        </div>
+
+        <div class="asidelogin">
+
+            <div class="asidelogincontent">
+            <h2>Tailor made music</h2>
+            <h1>Precise</h1>
+            <p></p>
+        </div>
+        </div>
+
+        <div id="tokenSection" class="row">
+                <input class="btn btn-primary btn-lg" type="button" onclick="requestAuthorization()" value="Login with Spotify"><br/>
+        </div>
+    </div>
+</body>
+
+</html>
