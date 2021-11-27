@@ -469,3 +469,32 @@ display: block;
     opacity: 0.5;
 }
 
+.generatedothers {
+    position: absolute;
+    width: 75%;
+    top: 68vh;
+    left: 19vw;
+}
+
+.latesttitle {
+    font-size: 2.8vh;
+    font-weight: 500;   
+}
+
+#latestgenerated {
+    display: flex;
+    flex-direction: row;
+}
+
+#latestgenerated > div {
+    background-color: #262626;
+    border-radius: 10px 10px 10px 10px;
+    margin: 2vh 5vh 0 0;
+    height: 22vh;
+    width: 30vh;
+    box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+#latestgenerated > div img {
+    width: 10vh;
+}

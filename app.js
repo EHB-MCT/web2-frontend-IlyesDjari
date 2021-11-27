@@ -146,6 +146,7 @@ function handleApiResponse(){
 function newRelease(){
     var x = Math.floor(Math.random()*20);
     const RELEASE = `https://api.spotify.com/v1/browse/new-releases?country=BE&limit=5&offset=${x}`;
+    console.log(release);
     callApi( "GET", RELEASE, null, newRealeaseResponse);
 }
 
@@ -199,6 +200,7 @@ function handleCurrentlyPlayingResponse(){
 
 function newRealeaseResponse(){
     var data = JSON.parse(this.responseText);
+    console.log(data);
     if ( data.albums != null ){
         for(let i = 0; i<5; i++) {
             document.getElementById("release").insertAdjacentHTML('afterbegin', `

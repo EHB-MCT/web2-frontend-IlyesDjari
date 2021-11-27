@@ -14,4 +14,4 @@ Questions to ask Mike
 
 1. Text hover bar thing away ?
 2. How to set JSHint version to ES6 correctly
-3. Good idea to keep client id in backend or more secure way ?
+3. Good idea to keep client id in backend env file or more secure way ?
