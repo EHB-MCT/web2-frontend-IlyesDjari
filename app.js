@@ -1,3 +1,4 @@
+
 document.documentElement.addEventListener("load", function(){
     document.getElementById("loader").style.display = "block";
 });
@@ -11,11 +12,6 @@ window.addEventListener("load", function(){
 function requestAuthorization() {
     location.replace("http://localhost:3000/login");
 }
-
-
-
-
-
 
 
 function newRelease(){
