@@ -1,5 +1,3 @@
-"use strict"
-
 var redirect_uri = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/home.html";
 var client_id = "75d6012515364a608ebbf7ec5113308c";
 var client_secret = "e9069eeeb800474394cbe578f1a93c67";
@@ -20,7 +18,6 @@ document.documentElement.addEventListener("load", function () {
 window.addEventListener("load", function () {
     document.getElementById("loader").style.display = "none";
 });
-
 
 function onPageLoad() {
     client_id = localStorage.getItem("client_id");
