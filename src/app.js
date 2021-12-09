@@ -1,6 +1,6 @@
 "use strict"
 
-var redirect_uri = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/pages/home.html";
+var redirect_uri = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/home.html";
 var client_id = "75d6012515364a608ebbf7ec5113308c";
 var client_secret = "e9069eeeb800474394cbe578f1a93c67";
 var access_token = null;
@@ -211,15 +211,13 @@ function newRealeaseResponse() {
 function reply_click(clicked_id) {
     CHOICES.push(clicked_id);
     console.log(CHOICES);
-
-    /* document.getElementById("choices").style.display = "none";
-     document.getElementById("lengthtimeline").style.backgroundColor = "#A065FF";
-     document.getElementById("lengthtimeline").style.width = "22.5vw";
-     document.getElementById("genre").style.transform = "scale(1)";
-     document.getElementById("mood").style.transform = "scale(1.1)";
-     document.getElementById("mood").style.backgroundColor = "#A065FF";
-     document.getElementById("moodimg").style.opacity = "1";
-     document.getElementById("choicesmood").style.display = "flex";
-     document.getElementById("generate").style.display = "none";
-     */
+    document.getElementById("choices").style.display = "none";
+    document.getElementById("lengthtimeline").style.backgroundColor = "#A065FF";
+    document.getElementById("lengthtimeline").style.width = "22.5vw";
+    document.getElementById("genre").style.transform = "scale(1)";
+    document.getElementById("mood").style.transform = "scale(1.1)";
+    document.getElementById("mood").style.backgroundColor = "#A065FF";
+    document.getElementById("moodimg").style.opacity = "1";
+    document.getElementById("choicesmood").style.display = "flex";
+    document.getElementById("generate").style.display = "none";
 }
