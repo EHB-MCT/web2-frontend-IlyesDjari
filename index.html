@@ -9,7 +9,7 @@
     <script src="app.js"></script>
 </head>
 
-<body class="loginbody" onLoad();>
+<body onload="onPageLoad()" class="loginbody" onLoad();>
 
     <div id="loader">
         <img src="./images/OTOBig.png" alt="OTOLogo">
@@ -25,14 +25,15 @@
         <div class="asidelogin">
 
             <div class="asidelogincontent">
-            <h2>Tailor made music</h2>
-            <h1>Precise</h1>
-            <p></p>
-        </div>
+                <h2>Tailor made music</h2>
+                <h1>Precise</h1>
+                <p></p>
+            </div>
         </div>
 
         <div id="tokenSection" class="row">
-                <input class="btn btn-primary btn-lg" type="button" onclick="requestAuthorization()" value="Login with Spotify"><br/>
+            <input class="btn btn-primary btn-lg" type="button" onclick="requestAuthorization()"
+                value="Login with Spotify"><br />
         </div>
     </div>
 </body>
