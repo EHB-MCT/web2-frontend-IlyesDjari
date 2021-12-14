@@ -30,6 +30,12 @@
     background-color: #262626;
 }
 
+#loginbutton {
+    height: 10vh;
+    width: 30vw;
+    background-color: #67A4FF;
+}
+
 
 
 #loader {

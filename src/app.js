@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
     document.getElementById("loader").style.display = "none";
 });
 
-window.onload = function() {
+window.onload = function onPageLoad() {
     client_id = localStorage.getItem("client_id");
     client_secret = localStorage.getItem("client_secret");
 
@@ -37,6 +37,7 @@ window.onload = function() {
     }
 }
 
+
 function handleRedirect() {
     let code = getCode();
     fetchAccessToken(code);
@@ -53,7 +54,7 @@ function getCode() {
     return code;
 }
 
-function requestAuthorization() {
+document.getElementById("loginbutton").addEventListener("click", function() {
     client_id = '75d6012515364a608ebbf7ec5113308c';
     client_secret = 'e9069eeeb800474394cbe578f1a93c67';
     localStorage.setItem("client_id", client_id);
@@ -65,7 +66,9 @@ function requestAuthorization() {
     url += "&show_dialog=true";
     url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
     window.location.href = url;
-}
+});
+
+
 
 function fetchAccessToken(code) {
     let body = "grant_type=authorization_code";
