@@ -5,127 +5,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTO</title>
-    <link href="../style.css" rel="stylesheet">
-    <script src="../main.js"></script>
+    <link href="/web2-frontend-IlyesDjari/docs/style.css" rel="stylesheet">
+    <script src="/web2-frontend-IlyesDjari/docs/main.js"></script>
 </head>
 
-<body onload="onPageLoad()" id="homebody">
+<body id="homebody">
 
-    <div id="loader">
-        <img src="../images/OTOBig.png" alt="OTOLogo">
-        <div class="spinloader"></div>
+<div id="loader">
+    <img src="/web2-frontend-IlyesDjari/docs/images/OTOBig.png" alt="OTOLogo">
+    <div class="spinloader"></div>
+</div>
+
+<aside >
+<img class="otobig" src="/web2-frontend-IlyesDjari/docs/images/OTOBig.png" alt="OTO logo">
+<h2 class="newreleases">New releases</h2>
+<div id="release">
+</div>
+<h2 class="current">Currently playing</h2>
+
+<div id="currentplaying">
+    <div>
+        <img id="imgcurrent" src="" alt="cover">
+        <h3 id="artistcurrent">No song is playing</h3>
+        <p id="songcurrent"></p>
     </div>
+</div>
+</aside>
 
-    <aside>
-        <img class="otobig" src="../images/OTOBig.png" alt="OTO logo">
-        <h2 class="newreleases">New releases</h2>
-        <div id="release">
-        </div>
-        <h2 class="current">Currently playing</h2>
+<main>
 
-        <div id="currentplaying">
-            <div>
-                <img id="imgcurrent" src="" alt="cover">
-                <h3 id="artistcurrent">No song is playing</h3>
-                <p id="songcurrent"></p>
-            </div>
-        </div>
-    </aside>
+<div id="userprofile">
+    <p id="daytime"></p>
+    <p id="username"></p>
+    <img src="" alt="" id="userpicture">
+</div>
 
-    <main>
-
-        <div id="userprofile">
-            <p id="daytime"></p>
-            <p id="username"></p>
-            <img src="" alt="" id="userpicture">
-        </div>
-
-        <div class="generator">
-            <h1 class="custom">Custom playlist</h1>
-            <div id="back"> </div>
-            <h2 id="generate">Generate a recommended playlist</h2>
+<div class="generator">
+    <h1 class="custom">Custom playlist</h1>
+    <div id="back"> </div>
+    <h2 id="generate">Generate a recommended playlist</h2>
 
 
 
-            <div id="choices">
-                <button id="rock" onClick="reply_click(this.id)">
-                    <h3>Rock</h3>
-                    <img src="../images/nirvana.png" alt="nirvana">
-                </button>
-                <button id="pop" onClick="reply_click(this.id)">
-                    <h3>Pop</h3>
-                    <img src="../images/mj.png" alt="michael jackson">
-                </button>
-                <button id="edm" onClick="reply_click(this.id)">
-                    <h3>Edm</h3>
-                    <img src="../images/tiesto.png" alt="tiesto">
-                </button>
-                <button id="rap" onClick="reply_click(this.id)">
-                    <h3>Rap</h3>
-                    <img src="../images/drake.png" alt="drake">
-                </button>
-                <button id="metal" onClick="reply_click(this.id)">
-                    <h3>Metal</h3>
-                    <img src="../images/ozzy.png" alt="ozzy osbourne">
-                </button>
-                <button id="latin" onClick="reply_click(this.id)">
-                    <h3>Latin</h3>
-                    <img src="../images/jbalvin.png" alt="jbalvin">
-                </button>
-                <button id="jazz" onClick="reply_click(this.id)">
-                    <h3>Jazz</h3>
-                    <img src="../images/miles.png" alt="miles davis">
-                </button>
-                <button id="punk" onClick="reply_click(this.id)">
-                    <h3>Punk</h3>
-                    <img src="../images/greenday.png" alt="nirvana">
-                </button>
-            </div>
+    <div id="choices">
+    <button id="rock" onClick="reply_click(this.id)">
+    <h3>Rock</h3>
+    <img src="../images/nirvana.png" alt="nirvana">
+    </button>
+    <button id="pop" onClick="reply_click(this.id)">
+    <h3>Pop</h3>
+    <img src="../images/mj.png" alt="michael jackson">
+    </button>
+    <button id="edm" onClick="reply_click(this.id)">
+    <h3>Edm</h3>
+    <img src="../images/tiesto.png" alt="tiesto">
+    </button>
+    <button id="rap" onClick="reply_click(this.id)">
+    <h3>Rap</h3>
+    <img src="../images/drake.png" alt="drake">
+    </button>
+    <button id="metal" onClick="reply_click(this.id)">
+    <h3>Metal</h3>
+    <img src="../images/ozzy.png" alt="ozzy osbourne">
+    </button>
+    <button id="latin" onClick="reply_click(this.id)">
+     <h3>Latin</h3>
+    <img src="../images/jbalvin.png" alt="jbalvin">
+    </button>
+    <button id="jazz" onClick="reply_click(this.id)">
+    <h3>Jazz</h3>
+    <img src="../images/miles.png" alt="miles davis">
+   </button>
+    <button id="punk" onClick="reply_click(this.id)">
+    <h3>Punk</h3>
+    <img src="../images/greenday.png" alt="nirvana">
+   </button>
+  </div>
 
-            <div id="choicesmood">
+  <div id="choicesmood">
 
-                <button id="chill" onClick="reply_click2(this.id)">
-                    <h3>Chill</h3>
-                    <img src="../images/chill.png" alt="chill">
-                </button>
-                <button id="party" onClick="reply_click2(this.id)">
-                    <h3>Party</h3>
-                    <img src="../images/party.png" alt="party">
-                </button>
-                <button id="energetic" onClick="reply_click2(this.id)">
-                    <h3>Energetic</h3>
-                    <img src="../images/energetic.png" alt="energetic">
-                </button>
-
-
-            </div>
+    <button id="chill" onClick="reply_click2(this.id)">
+    <h3>Chill</h3>
+    <img src="../images/chill.png" alt="chill">
+    </button>
+    <button id="party" onClick="reply_click2(this.id)">
+    <h3>Party</h3>
+    <img src="../images/party.png" alt="party">
+    </button>
+    <button id="energetic" onClick="reply_click2(this.id)">
+    <h3>Energetic</h3>
+    <img src="../images/energetic.png" alt="energetic">
+    </button>
 
 
-            <div class="timeline"></div>
-            <div id="lengthtimeline"></div>
+  </div>
 
-            <div id="genre">
-                <img src="../images/Genre.png" alt="genre">
-                <p id="genretxt">Genre</p>
-            </div>
 
-            <div id="mood">
-                <img id="moodimg" src="../images/Mood.png" alt="mood">
-                <p id="genretxt">Mood</p>
-            </div>
+ <div class="timeline"></div>
+ <div id="lengthtimeline"></div>
 
-            <div id="popularity">
-                <img src="../images/Popularity.png" alt="popularity">
-                <p id="genretxt">Known</p>
-            </div>
+   <div id="genre">
+       <img src="../images/Genre.png" alt="genre">
+    <p id="genretxt">Genre</p>
+   </div>
 
-            <div class="playlist">
-                <img src="../images/Playlist.png" alt="playlist">
-                <p id="genretxt">Done</p>
-            </div>
+   <div id="mood">
+    <img id="moodimg" src="../images/Mood.png" alt="mood">
+    <p id="genretxt">Mood</p>
+   </div>
 
-        </div>
-    </main>
+   <div id="popularity">
+    <img src="../images/Popularity.png" alt="popularity">
+    <p id="genretxt">Known</p>
+   </div>
+
+   <div class="playlist">
+    <img src="../images/Playlist.png" alt="playlist">
+    <p id="genretxt">Done</p>
+   </div>
+
+</div>
+
+
+<div class="generatedothers">
+
+<h2 class="latesttitle">Latest playlists</h2>
+
+<div id="latestgenerated">
+    <div>
+    <img src="" alt="">
+     </div>
+    <div>
+    <img src="" alt="">
+    </div>
+   <div>
+    <img src="" alt="">
+    </div>
+    <div>
+    <img src="" alt="">
+    </div>
+    <div>
+    <img src="" alt="">
+    </div>
+    <div>
+        <img src="" alt="">
+    </div>
+</div>
+
+</div>
+
+
+
+</main>
+
+
+
 </body>
 
 </html>

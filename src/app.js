@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
     document.getElementById("loader").style.display = "none";
 });
 
-function onPageLoad() {
+window.onload = function() {
     client_id = localStorage.getItem("client_id");
     client_secret = localStorage.getItem("client_secret");
 
