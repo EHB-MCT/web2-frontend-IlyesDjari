@@ -6,6 +6,7 @@ https://www.codegrepper.com/code-examples/javascript/get+id+of+clicked+div+javas
 https://www.youtube.com/watch?v=pKd0Rpw7O48 //// Setting up the REST API correctly
 https://github.com/tombaranowicz/SpotifyPlaylistExport/blob/master/index.js //// Correct way to connect to spotify with backend
 https://github.com/thelinmichael/spotify-web-api-node/blob/master/src/spotify-web-api.js //// Documentation of spotify web api library
+https://coderoad.ru/43915577/Nodejs-express-Heroku-CORS// CORS
 
 
 
