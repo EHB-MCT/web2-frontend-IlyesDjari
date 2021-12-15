@@ -13,33 +13,15 @@ window.addEventListener("load", function () {
 });
 
 
-
-document.getElementById('loginbutton').addEventListener("click", function() {
+document.getElementById('loginbutton').addEventListener("click", async function() {
     fetch(baseURL + "/connect")
     .then((response) => response.json())
     .then((data) => {
     console.log(data.data);
-    window.location = data.data
+    window.location = data.data;
       });
     })
 
-
-
-function handleRedirect() {
-    let code = getCode();
-    fetchAccessToken(code);
-    window.history.pushState("", "", redirect_uri);
-}
-
-function getCode() {
-    let code = null;
-    const queryString = window.location.search;
-    if (queryString.length > 0) {
-        const urlParams = new URLSearchParams(queryString);
-        code = urlParams.get('code');
-    }
-    return code;
-}
 
 
 function reply_click(clicked_id) {
@@ -55,3 +37,9 @@ function reply_click(clicked_id) {
     document.getElementById("choicesmood").style.display = "flex";
     document.getElementById("generate").style.display = "none";
 }
+
+
+
+
+
+
