@@ -20,16 +20,16 @@ console.log(code);
     }
 
     
- fetch(baseURL + "/getcode", {
-  method: 'POST', 
-  mode: 'cors', 
-  headers: {
-    'Content-Type': 'application/json',
-    "Content-Security-Policy": "upgrade-insecure-requests",
-  },
-  body: JSON.stringify(code) 
-})
+//  fetch(baseURL + "/getcode", {
+//   method: 'POST', 
+//   mode: 'cors', 
+//   headers: {
+//     'Content-Type': 'application/json',
+//     "Content-Security-Policy": "upgrade-insecure-requests",
+//   },
+//   body: JSON.stringify(code) 
+// })
 
-  .then((res) => {
-    console.log("Request complete! response:", res);
-});
+//   .then((res) => {
+//     console.log("Request complete! response:", res);
+// });
