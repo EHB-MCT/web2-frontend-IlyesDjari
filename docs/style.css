@@ -747,12 +747,17 @@ display: block;
 }
 
 #addedsongscontainer > a{
-   background-color: #262626;
+   background-color: #26262685;
    border-radius: 5px 5px 5px 5px;
    height: 5.5vh;
    width: 20vw;
    box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
   }
+
+  #addedsongscontainer > a:hover{
+    background-color: #262626;
+    transform: scale(105%);
+   }
 
   #addedsongscontainer div > .addedcovers {
      float: right;
