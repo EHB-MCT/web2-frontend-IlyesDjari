@@ -678,17 +678,17 @@ display: block;
 
    .addedplaylist {
        position: absolute;
-       height: 65vh;
+       height: 70vh;
        width: 20vw;
        top: 25vh;
        left: 20vw;
-       background-color: red;
    }
 
    #coveradded {
        width: 20vw;
        height: 20vw;
        background-color: rgb(0, 0, 0);
+       border-radius: 10px 10px 10px 10px;
    }
 
    .addedplaylist h2 {
@@ -700,3 +700,90 @@ display: block;
        margin-top: 1vh;
     text-align: center;
    }
+
+   .opencustom {
+       margin-top: 3vh;
+       display: flex;
+       justify-content: center;
+       padding-top: 1.5vh;
+       width: 20vw;
+       height: 5vh;
+       border: none;
+       background-color: #1DB954;
+       font-size: 1.8vh;
+       font-weight: 500;
+       border-radius: 5px 5px 5px 5px;
+       cursor: pointer;
+       
+   }
+
+   .generated {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5vh;
+    width: 20vw;
+    height: 5vh;
+    border: none;
+    background-color: #262626;
+    font-size: 1.6vh;
+       font-weight: 500;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+#addedsongscontainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  gap: 2vh;
+  height: 75vh;
+  width: 45vw;
+  top: 25vh;
+  left: 50vw;
+}
+
+#addedsongscontainer > a{
+   background-color: #262626;
+   border-radius: 5px 5px 5px 5px;
+   height: 5.5vh;
+   width: 20vw;
+   box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #addedsongscontainer div > .addedcovers {
+     float: right;
+     height: 5.5vh;
+     border-radius: 5px 5px 5px 5px;
+     box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   #addedsongscontainer div > .play {
+    float: left;
+    height: 2.5vh;
+    padding: 1.7vh 1vw;
+  }
+
+   #addedsongscontainer div > .info {
+       padding: 1.75vh 0 1.75vh 0.5vw;
+       display: flex;
+       flex-direction: row;
+       justify-content: left;
+       align-self: center;
+       gap: 0.8vw;
+   }
+
+   #addedsongscontainer div > .info h3 {
+    font-size: 1.5vh;
+}
+
+#addedsongscontainer div > .info .songname {
+    font-size: 1.5vh;
+}
+
+#addedsongscontainer div > .info .duration {
+    font-size: 1.5vh;
+    opacity: 70%;
+}
+

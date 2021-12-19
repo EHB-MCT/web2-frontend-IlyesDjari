@@ -22,6 +22,7 @@ let body = {
     "code": code
    }  
 postCode(body);
+playlistgenerator();
 }
 
 function postCode(body) {
@@ -75,4 +76,23 @@ function mood() {
     document.getElementById("popularity").style.backgroundColor = "#FF7448";
     document.getElementById("choicespopularity").style.display = "flex";
     document.getElementById("popularityimg").style.opacity = "1";
+}
+
+function playlistgenerator() {
+for(let i = 0; i<20; i++) {
+    document.getElementById("addedsongscontainer").insertAdjacentHTML('afterbegin', `
+            <a href="./home"">
+            <div>
+            <img class="play" src="../images/play.png" alt="play">
+            <img class="addedcovers" src="../images/damso.jpg" alt="cover">
+            <div class="info">
+            <h3>Damso</h3>
+            <p class="songname">Ipséité</p>
+            <p class="duration">2:13</p>
+            </div>
+            </div>
+            </a>`);
+}
+
+
 }
