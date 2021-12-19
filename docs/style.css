@@ -285,7 +285,9 @@ aside {
 }
 
 #imgcurrent {
-    width: 10vw;
+    opacity: 80%;
+    margin: 2.5vw;
+    width: 5vw;
     border-radius: 10px 10px 0 0;
 }
 
