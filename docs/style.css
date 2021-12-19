@@ -59,6 +59,11 @@
     font-size: 4.5vh;
 }
 
+.otologinlogo {
+    height: 5vh;
+    margin: 5vh 0 0 5vh;
+}
+
 .loginextra {
     margin-top: 1.5vh;
     text-align: center;
@@ -404,11 +409,11 @@ aside {
     background-color: #0A79DE;
 }
 
-#rap {
+#rap, #indie {
     background-color: #E53A12;
 }
 
-#metal {
+#metal, #trending {
     background-color: #A065FF;   
 }
 
@@ -416,7 +421,7 @@ aside {
     background-color: #FFC830;
 }
 
-#punk {
+#punk, #mixed {
     background-color: #1DB954;
 }
 
@@ -437,7 +442,7 @@ aside {
 }
 
 #choicesmood button {
-  border: none;
+ border: none;
     cursor: pointer;
     margin-top: 5vh;
     height: 35vh;
@@ -451,9 +456,10 @@ aside {
 }
 
 #choicesmood button img {
-    margin: 10vh auto 0 auto;
-    height: 18vh;
+    margin: 7vh auto 0 auto;
+    height: 28vh;
     display: block;
+    border-radius: 10px 10px 10px 10px;
 }
 
 #choicesmood button h3 {
@@ -465,6 +471,43 @@ aside {
 }
 
 
+#choicespopularity {
+    display: none;
+    height: 50vh;
+    width: 65vw;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#choicespopularity button {
+    border: none;
+       cursor: pointer;
+       margin-top: 5vh;
+       height: 35vh;
+       width: 17.5vw;
+       border-radius: 10px 10px 10px 10px;
+       box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+   }
+   
+   #choicespopularity button:hover {
+       transform: scale(1.1);
+   }
+   
+   #choicespopularity button img {
+       margin: 7vh auto 0 auto;
+       height: 28vh;
+       display: block;
+       border-radius: 10px 10px 10px 10px;
+   }
+   
+   #choicespopularity button h3 {
+       margin: 3vh auto 0 auto;
+       font-size: 2.5vh;
+       position: absolute;
+       text-align: center;
+       width: 17.5vw;
+   }
 
 /*Timeline*/ 
 
@@ -596,3 +639,64 @@ display: block;
 #latestgenerated > div img {
     width: 10vh;
 }
+
+
+/*Custom Playlist*/
+
+.topplaylist {
+    background-color: #A065FF;
+    position: absolute;
+    top: 0;
+    left: 15vw;
+    width: 85vw;
+    height: 20vh;
+}
+
+.topplaylist h1 {
+ text-align: center;
+ margin-top: 5.5vh;
+}
+
+.topplaylist a img {
+    width: 2vw;
+   }
+
+.backcustom *{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 1vw;
+    opacity: 90%;
+   }
+
+   .backcustom {
+       position: absolute;
+       left: 5vw;
+       top: 7.5vh;
+   }
+
+
+   .addedplaylist {
+       position: absolute;
+       height: 65vh;
+       width: 20vw;
+       top: 25vh;
+       left: 20vw;
+       background-color: red;
+   }
+
+   #coveradded {
+       width: 20vw;
+       height: 20vw;
+       background-color: rgb(0, 0, 0);
+   }
+
+   .addedplaylist h2 {
+       margin-top: 3vh;
+       text-align: center;
+   }
+   
+   .addedplaylist p {
+       margin-top: 1vh;
+    text-align: center;
+   }
