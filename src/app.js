@@ -11,13 +11,12 @@ window.addEventListener("load", function () {
 
 
 document.getElementById('loginbutton').addEventListener("click", async function() {
-    fetch(baseURL + "/connect")
-    .then((response) => response.json())
-    .then((data) => {
-    console.log(data.data);
-    window.location = data.data;
+    
+        
       });
-    })
+
+
+
 
 
 

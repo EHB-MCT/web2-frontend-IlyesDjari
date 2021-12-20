@@ -11,36 +11,49 @@ window.addEventListener("load", function () {
 });
 
 window.onload = function onPageLoad() {
-    let code = null;
-const queryString = window.location.search;
-if ( queryString.length > 0 ){
-    const urlParams = new URLSearchParams(queryString);
-    code = urlParams.get('code');
-}
-
-let body = {
-    "code": code
-   }  
-postCode(body);
+getReleases();
+current();
 playlistgenerator();
 }
 
-function postCode(body) {
+async function getReleases() {
+   console.log("hello");
 
-    console.log("Sending code");
-   fetch(baseURL + "/getcode", {
-    method: 'POST', 
-    mode: 'cors', 
-    headers: {
-      'Content-Type': 'application/json',
-      "Content-Security-Policy": "upgrade-insecure-requests"
-    },
-    body: JSON.stringify(body) 
-  })
-    .then((res) => {
-      console.log("Request complete! response:", "" ,res, body);
-  });
+    await fetch(baseURL + "/newreleases")
+    .then((response) => response.json())
+    .then((data) => {
+        for(let i = 0; i<5; i++) {
+
+        document.getElementById("release").insertAdjacentHTML('afterbegin', `
+        <a href="${data.body.albums.items[i].external_urls.spotify}"">
+        <div>
+        <img src="${data.body.albums.items[i].images[0].url}" alt="cover">
+        <h3>${data.body.albums.items[i].artists[0].name}</h3>
+        <p>${data.body.albums.items[i].name}</p>
+        </div>
+        </a>`);
+    }
+      });
 }
+
+async function current() {
+    console.log("hello");
+ 
+     await fetch(baseURL + "/currentsong")
+     .then((response) => response.json())
+     .then((data) => {
+        if ( data.body.item != null ){       
+            document.getElementById("imgcurrent").src = data.body.item.album.images[0].url;
+            document.getElementById("artistcurrent").innerHTML = data.body.item.artists[0].name;
+            document.getElementById("songcurrent").innerHTML = data.body.item.name;
+            document.getElementById("imgcurrent").style.margin = "0";
+            document.getElementById("imgcurrent").style.width = "10vw";
+            document.getElementById("imgcurrent").style.opacity = "100%";
+        }
+       });
+ }
+
+
 
 function reply_click(clicked_id) {
     CHOICES.push(clicked_id);
