@@ -176,7 +176,6 @@ async function playlistgenerator(playlistid) {
     }
     addtoserver(create);
       });
-      //window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
 }
 
 async function addtoserver(create) {
@@ -191,7 +190,7 @@ async function addtoserver(create) {
       })
       .then(res => res.json())
       .then(res => console.log(res)) 
-      window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
+      window.location = "https://ehb-mct.github.io/web2-frontend-IlyesDjari/pages/custom-playlist.html"
 }
 
 
