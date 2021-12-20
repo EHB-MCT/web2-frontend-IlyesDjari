@@ -35,16 +35,17 @@ async function getReleases() {
 }
 
 async function latestPlaylists() {
+    console.log("gghello");
     await fetch(baseURL + "/allgenerated")
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
-        for(let i = 0; i<6; i++) {
-        document.getElementById("latestgenerated").insertAdjacentHTML('afterbegin', `
-        <div>
-        <img src="" alt="">
-        </div>`);
-    }
+        console.log("Received data", data);
+    //     for(let i = 0; i<6; i++) {
+    //     // document.getElementById("latestgenerated").insertAdjacentHTML('afterbegin', `
+    //     // <div>
+    //     // <img src="" alt="">
+    //     // </div>`);
+    // }
       });
 }
 
@@ -68,7 +69,6 @@ async function current() {
      await fetch(baseURL + "/getuser")
      .then((response) => response.json())
      .then((data) => {
-         console.log(data);
         const time = new Date().getHours();
         document.getElementById("username").innerHTML = data.body.display_name; 
         document.getElementById("userpicture").src = data.body.images[0].url
@@ -87,7 +87,6 @@ async function current() {
 
  function handleClick(event) {
     let buttonValue = event.target.parentElement.id;
-    console.log("You clicked this", buttonValue);
     if (CHOICES[0] == undefined) {
         document.getElementById('genretxt').innerHTML = `${buttonValue}`;
     genre();
@@ -161,7 +160,6 @@ async function popularity(res) {
         target_popularity: CHOICES[2]
     }
 
-    console.log(obj);
     await fetch(baseURL + '/featured', {
           method: 'POST',
           mode: 'cors',
@@ -172,7 +170,6 @@ async function popularity(res) {
           body: JSON.stringify(obj)
         })
         .then(res => res.json())
-        .then(res => console.log(res))
         playlistgenerator(playlistid);
 }
 
@@ -205,7 +202,6 @@ async function addtoserver(create) {
         body: JSON.stringify(create)
       })
       .then(res => res.json())
-      .then(res => console.log(res)) 
       window.location = "https://ehb-mct.github.io/web2-frontend-IlyesDjari/pages/custom-playlist.html"
 }
 

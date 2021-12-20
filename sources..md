@@ -8,13 +8,7 @@ https://github.com/tombaranowicz/SpotifyPlaylistExport/blob/master/index.js ////
 https://github.com/thelinmichael/spotify-web-api-node/blob/master/src/spotify-web-api.js //// Documentation of spotify web api library
 https://coderoad.ru/43915577/Nodejs-express-Heroku-CORS// CORS
 https://www.youtube.com/watch?v=M9Fs-CCe0Jo // MongoDB
-https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/formdata_event // Form eventlistener
+Source code of course project with Benoit & Finn
 
 
 
-
-Questions to ask Mike
-
-1. Text hover bar thing away ?
-2. How to set JSHint version to ES6 correctly
-3. Good idea to keep client id in backend env file or more secure way ?
