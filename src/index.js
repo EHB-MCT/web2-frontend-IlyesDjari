@@ -174,9 +174,13 @@ async function playlistgenerator(playlistid) {
      playlistid: playlistid,
      songs: songs 
     }
+    addtoserver(create);
+      });
+      //window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
+}
 
-    console.log("The create object", create);
-    fetch(baseURL + '/addtoplaylist', {
+async function addtoserver(create) {
+    await fetch(baseURL + '/addtoplaylist', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -187,10 +191,8 @@ async function playlistgenerator(playlistid) {
       })
       .then(res => res.json())
       .then(res => console.log(res)) 
-      });
-      //window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
+      window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
 }
-
 
 
 
