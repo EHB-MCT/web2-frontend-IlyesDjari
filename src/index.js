@@ -14,6 +14,7 @@ window.onload = function onPageLoad() {
 getReleases();
 user(); 
 current();
+latestPlaylists();
 }
 
 async function getReleases() {
@@ -29,6 +30,20 @@ async function getReleases() {
         <p>${data.body.albums.items[i].name}</p>
         </div>
         </a>`);
+    }
+      });
+}
+
+async function latestPlaylists() {
+    await fetch(baseURL + "/allgenerated")
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+        for(let i = 0; i<6; i++) {
+        document.getElementById("latestgenerated").insertAdjacentHTML('afterbegin', `
+        <div>
+        <img src="" alt="">
+        </div>`);
     }
       });
 }
