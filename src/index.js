@@ -14,7 +14,6 @@ window.onload = function onPageLoad() {
 getReleases();
 user(); 
 current();
-playlistgenerator();
 }
 
 async function getReleases() {
@@ -54,6 +53,7 @@ async function current() {
      await fetch(baseURL + "/getuser")
      .then((response) => response.json())
      .then((data) => {
+         console.log(data);
         const time = new Date().getHours();
         document.getElementById("username").innerHTML = data.body.display_name; 
         document.getElementById("userpicture").src = data.body.images[0].url
@@ -102,7 +102,6 @@ async function current() {
         let popularity = Math.ceil(Math.random()*(100 - 66) + 66)
         CHOICES.push(popularity);
        }
-     popularity();
    }
   }
   document.querySelector("#choices").addEventListener("click", handleClick);
@@ -134,7 +133,7 @@ function mood() {
     document.getElementById("popularityimg").style.opacity = "1";
 }
 
-function popularity() {
+async function popularity(res) {
     document.getElementById("choicespopularity").style.display = "none";
     document.getElementById("lengthtimeline").style.backgroundColor = "#1DB954";
     document.getElementById("lengthtimeline").style.width = "57.5vw";
@@ -142,16 +141,20 @@ function popularity() {
     document.getElementById("playlist").style.transform = "scale(1.1)";
     document.getElementById("playlist").style.backgroundColor = "#1DB954";
     document.getElementById("playlistimg").style.opacity = "1";
+
+    
+    const playlistid = res.body.id;
+
     const obj = {
         limit: 20,
         market: "BE",
-        seed_genres: "hip-hop", 
-        target_energy: 50, 
-        target_popularity: 60
+        seed_genres: CHOICES[0], 
+        target_energy: CHOICES[1], 
+        target_popularity: CHOICES[2]
     }
 
     console.log(obj);
-    fetch(baseURL + '/featured', {
+    await fetch(baseURL + '/featured', {
           method: 'POST',
           mode: 'cors',
           headers: {
@@ -159,23 +162,68 @@ function popularity() {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(obj)
-        });
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        playlistgenerator(playlistid);
+       //setTimeout(window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html",3000 ) 
+}
+
+async function playlistgenerator(playlistid) {
+    const songs = []
+
+    await fetch(baseURL + "/lastfeatured")
+    .then((response) => response.json())
+    .then((data) => {
+      for(let i = 0; i<20; i++) {
+        songs.push(data.bodycode[i].uri);
+    }
+
+    let create = {
+     playlistid: playlistid,
+     songs: songs 
+    }
+
+    console.log("The create object", create);
+    fetch(baseURL + '/addtoplaylist', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(create)
+      })
+      .then(res => res.json())
+      .then(res => console.log(res)) 
+      });
+      window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
 }
 
 
-function playlistgenerator() {
-for(let i = 0; i<20; i++) {
-    document.getElementById("addedsongscontainer").insertAdjacentHTML('afterbegin', `
-            <a href="./home"">
-            <div>
-            <img class="play" src="../images/play.png" alt="play">
-            <img class="addedcovers" src="../images/damso.jpg" alt="cover">
-            <div class="info">
-            <h3>Damso</h3>
-            <p class="songname">Ipséité</p>
-            <p class="duration">2:13</p>
-            </div>
-            </div>
-            </a>`);
-}
-}
+
+
+
+
+
+
+
+document.getElementById("submitname").addEventListener("click", async function (event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const create = {
+    "name": name
+    }
+    await fetch(baseURL + '/create', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(create)
+      })
+      .then(res => res.json())
+      .then(res => popularity(res)) 
+
+})

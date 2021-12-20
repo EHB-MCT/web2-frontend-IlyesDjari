@@ -8,6 +8,7 @@ https://github.com/tombaranowicz/SpotifyPlaylistExport/blob/master/index.js ////
 https://github.com/thelinmichael/spotify-web-api-node/blob/master/src/spotify-web-api.js //// Documentation of spotify web api library
 https://coderoad.ru/43915577/Nodejs-express-Heroku-CORS// CORS
 https://www.youtube.com/watch?v=M9Fs-CCe0Jo // MongoDB
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/formdata_event // Form eventlistener
 
 
 

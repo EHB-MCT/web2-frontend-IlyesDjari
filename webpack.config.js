@@ -4,7 +4,8 @@ module.exports = {
 
     entry: {
         index: './src/index.js',
-        input: './src/app.js'
+        app: './src/app.js',
+        playlist: './src/playlist.js'
     },
     output: {
         path: path.resolve(__dirname, 'docs'),
