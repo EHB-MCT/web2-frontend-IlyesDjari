@@ -22,7 +22,6 @@ async function getReleases() {
     .then((response) => response.json())
     .then((data) => {
         for(let i = 0; i<5; i++) {
-
         document.getElementById("release").insertAdjacentHTML('afterbegin', `
         <a href="${data.body.albums.items[i].external_urls.spotify}"">
         <div>
@@ -58,7 +57,6 @@ async function current() {
         const time = new Date().getHours();
         document.getElementById("username").innerHTML = data.body.display_name; 
         document.getElementById("userpicture").src = data.body.images[0].url
-
         if (time < 12) {
             document.getElementById("daytime").innerHTML = "Good morning, "
         }
@@ -74,30 +72,42 @@ async function current() {
 
  function handleClick(event) {
     let buttonValue = event.target.parentElement.id;
-    CHOICES.push(buttonValue);
-    if (CHOICES[1] == undefined) {
+    console.log("You clicked this", buttonValue);
+    if (CHOICES[0] == undefined) {
     genre();
-   } else if (CHOICES[0] !== undefined && CHOICES[1] !== undefined && CHOICES[2] == undefined) {
+    CHOICES.push(buttonValue);
+   } else if (CHOICES[0] !== undefined && CHOICES[1] == undefined && CHOICES[2] == undefined) {
+      
+    if (buttonValue == "chill") {
+        let energy = Math.ceil(Math.random()*33)
+        CHOICES.push(energy);
+       } else if (buttonValue == "party") {
+        let energy = Math.ceil(Math.random()*(66 - 33) + 33)
+        CHOICES.push(energy);
+       } else if (buttonValue == "energetic") {
+        let energy = Math.ceil(Math.random()*(100 - 66) + 66)
+        CHOICES.push(energy);
+       }
        mood();
+
    } else {
+    
+    if (buttonValue == "indie") {
+        let popularity = Math.ceil(Math.random()*33)
+        CHOICES.push(popularity);
+       } else if (buttonValue == "mixed") {
+        let popularity = Math.ceil(Math.random()*(66 - 33) + 33)
+        CHOICES.push(popularity);
+       } else if (buttonValue == "trending") {
+        let popularity = Math.ceil(Math.random()*(100 - 66) + 66)
+        CHOICES.push(popularity);
+       }
      popularity();
    }
-
   }
   document.querySelector("#choices").addEventListener("click", handleClick);
   document.querySelector("#choicesmood").addEventListener("click", handleClick);
   document.querySelector("#choicespopularity").addEventListener("click", handleClick);
-
-//   function handleClick2(event) {
-//     let buttonValue = event.target.parentElement.id;
-//     CHOICES.push(buttonValue);
-//     console.log(buttonValue);
-//     mood();
-//   }
-//   document.querySelector("#choicesmood").addEventListener("click", handleClick2);
-  
-
-
 
 
 function genre() {
@@ -125,7 +135,6 @@ function mood() {
 }
 
 function popularity() {
-    console.log(CHOICES);
     document.getElementById("choicespopularity").style.display = "none";
     document.getElementById("lengthtimeline").style.backgroundColor = "#1DB954";
     document.getElementById("lengthtimeline").style.width = "57.5vw";
@@ -133,11 +142,25 @@ function popularity() {
     document.getElementById("playlist").style.transform = "scale(1.1)";
     document.getElementById("playlist").style.backgroundColor = "#1DB954";
     document.getElementById("playlistimg").style.opacity = "1";
+    let obj = {
+        limit: 20,
+        seed_genres: CHOICES[0], 
+        target_energy: CHOICES[1], 
+        target_popularity: CHOICES[2]
+    }
+
+    console.log(obj);
+    fetch(baseURL + '/featured', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(obj)
+        });
+        const content = rawResponse.json();
+        console.log(content);
 }
-
-
-
-
 
 
 function playlistgenerator() {
