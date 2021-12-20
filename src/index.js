@@ -142,24 +142,24 @@ function popularity() {
     document.getElementById("playlist").style.transform = "scale(1.1)";
     document.getElementById("playlist").style.backgroundColor = "#1DB954";
     document.getElementById("playlistimg").style.opacity = "1";
-    let obj = {
+    const obj = {
         limit: 20,
-        seed_genres: CHOICES[0], 
-        target_energy: CHOICES[1], 
-        target_popularity: CHOICES[2]
+        market: "BE",
+        seed_genres: "hip-hop", 
+        target_energy: 50, 
+        target_popularity: 60
     }
 
     console.log(obj);
     fetch(baseURL + '/featured', {
           method: 'POST',
+          mode: 'cors',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(obj)
         });
-        const content = rawResponse.json();
-        console.log(content);
 }
 
 
