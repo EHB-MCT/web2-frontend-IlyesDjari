@@ -75,9 +75,26 @@ async function current() {
  function handleClick(event) {
     let buttonValue = event.target.parentElement.id;
     CHOICES.push(buttonValue);
+    if (CHOICES[1] == undefined) {
     genre();
+   } else if (CHOICES[0] !== undefined && CHOICES[1] !== undefined && CHOICES[2] == undefined) {
+       mood();
+   } else {
+     popularity();
+   }
+
   }
   document.querySelector("#choices").addEventListener("click", handleClick);
+  document.querySelector("#choicesmood").addEventListener("click", handleClick);
+  document.querySelector("#choicespopularity").addEventListener("click", handleClick);
+
+//   function handleClick2(event) {
+//     let buttonValue = event.target.parentElement.id;
+//     CHOICES.push(buttonValue);
+//     console.log(buttonValue);
+//     mood();
+//   }
+//   document.querySelector("#choicesmood").addEventListener("click", handleClick2);
   
 
 
@@ -89,14 +106,12 @@ function genre() {
     document.getElementById("lengthtimeline").style.width = "22.5vw";
     document.getElementById("genre").style.transform = "scale(1)";
     document.getElementById("mood").style.transform = "scale(1.1)";
+    document.getElementById("mood").style.transition = "all 1s";
     document.getElementById("mood").style.backgroundColor = "#A065FF";
     document.getElementById("moodimg").style.opacity = "1";
     document.getElementById("choicesmood").style.display = "flex";
     document.getElementById("generate").style.display = "none";
 }
-
-
-
 
 function mood() {
     document.getElementById("choicesmood").style.display = "none";
@@ -108,6 +123,22 @@ function mood() {
     document.getElementById("choicespopularity").style.display = "flex";
     document.getElementById("popularityimg").style.opacity = "1";
 }
+
+function popularity() {
+    console.log(CHOICES);
+    document.getElementById("choicespopularity").style.display = "none";
+    document.getElementById("lengthtimeline").style.backgroundColor = "#1DB954";
+    document.getElementById("lengthtimeline").style.width = "57.5vw";
+    document.getElementById("popularity").style.transform = "scale(1)";
+    document.getElementById("playlist").style.transform = "scale(1.1)";
+    document.getElementById("playlist").style.backgroundColor = "#1DB954";
+    document.getElementById("playlistimg").style.opacity = "1";
+}
+
+
+
+
+
 
 function playlistgenerator() {
 for(let i = 0; i<20; i++) {

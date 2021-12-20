@@ -524,6 +524,7 @@ aside {
 }
 
 #lengthtimeline {
+    transition: width 1s;
     height: 1vh;
     width: 6.5vw;
     position: absolute;
@@ -534,6 +535,7 @@ aside {
 
 #genre {
     background-color: #1DB954;
+    transition: all 2s;
     top: 50vh;
     left: 5vw;
     position: absolute;
@@ -560,6 +562,7 @@ display: block;
 
 #mood {
     background-color: #262626;
+    transition: all 2s;
     top: 50vh;
     left: 22.5vw;
     position: absolute;
@@ -578,6 +581,7 @@ display: block;
 
 #popularity {
     background-color: #262626;
+    transition: all 2s;
     top: 50vh;
     left: 40vw;
     position: absolute;
@@ -594,8 +598,9 @@ display: block;
     opacity: 0.5;
 }
 
-.playlist {
+#playlist {
     background-color: #262626;
+    transition: all 1s;
     top: 50vh;
     left: 57.5vw;
     position: absolute;
@@ -605,7 +610,7 @@ display: block;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
 }
 
-.playlist img {
+#playlist img {
     width: 3vh;
     margin: 1.5vh auto 0 auto;
     display: block;
