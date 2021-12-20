@@ -14,7 +14,7 @@ window.onload = function onPageLoad() {
 getReleases();
 user(); 
 current();
-latestPlaylists();
+// latestPlaylists();
 }
 
 async function getReleases() {
@@ -34,20 +34,20 @@ async function getReleases() {
       });
 }
 
-async function latestPlaylists() {
-    console.log("gghello");
-    await fetch(baseURL + "/allgenerated")
-    .then((response) => response.json())
-    .then((data) => {
-        console.log("Received data", data);
-    //     for(let i = 0; i<6; i++) {
-    //     // document.getElementById("latestgenerated").insertAdjacentHTML('afterbegin', `
-    //     // <div>
-    //     // <img src="" alt="">
-    //     // </div>`);
-    // }
-      });
-}
+// async function latestPlaylists() {
+//     console.log("gghello");
+//     await fetch(baseURL + "/allgenerated")
+//     .then((response) => response.json())
+//     .then((data) => {
+//         console.log("Received data", data);
+//     //     for(let i = 0; i<6; i++) {
+//     //     // document.getElementById("latestgenerated").insertAdjacentHTML('afterbegin', `
+//     //     // <div>
+//     //     // <img src="" alt="">
+//     //     // </div>`);
+//     // }
+//       });
+// }
 
 async function current() {
      await fetch(baseURL + "/currentsong")
