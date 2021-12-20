@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/EHB-MCT/web2-frontend-IlyesDjari#readme",
   "dependencies": {
+    "path": "^0.12.7",
     "webpack": "^5.65.0"
   },
   "devDependencies": {
