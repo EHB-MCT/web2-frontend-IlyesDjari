@@ -102,6 +102,7 @@ async function current() {
         let popularity = Math.ceil(Math.random()*(100 - 66) + 66)
         CHOICES.push(popularity);
        }
+       showName();
    }
   }
   document.querySelector("#choices").addEventListener("click", handleClick);
@@ -134,15 +135,6 @@ function mood() {
 }
 
 async function popularity(res) {
-    document.getElementById("choicespopularity").style.display = "none";
-    document.getElementById("lengthtimeline").style.backgroundColor = "#1DB954";
-    document.getElementById("lengthtimeline").style.width = "57.5vw";
-    document.getElementById("popularity").style.transform = "scale(1)";
-    document.getElementById("playlist").style.transform = "scale(1.1)";
-    document.getElementById("playlist").style.backgroundColor = "#1DB954";
-    document.getElementById("playlistimg").style.opacity = "1";
-
-    
     const playlistid = res.body.id;
 
     const obj = {
@@ -166,7 +158,6 @@ async function popularity(res) {
         .then(res => res.json())
         .then(res => console.log(res))
         playlistgenerator(playlistid);
-       //setTimeout(window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html",3000 ) 
 }
 
 async function playlistgenerator(playlistid) {
@@ -197,33 +188,39 @@ async function playlistgenerator(playlistid) {
       .then(res => res.json())
       .then(res => console.log(res)) 
       });
-      window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
+      //window.location = "http://127.0.0.1:5500/web2-frontend-IlyesDjari/docs/pages/custom-playlist.html"
 }
 
 
 
 
+function showName() {
 
+    document.getElementById("choicespopularity").style.display = "none";
+    document.getElementById("lengthtimeline").style.backgroundColor = "#1DB954";
+    document.getElementById("lengthtimeline").style.width = "57.5vw";
+    document.getElementById("popularity").style.transform = "scale(1)";
+    document.getElementById("playlist").style.transform = "scale(1.1)";
+    document.getElementById("playlist").style.backgroundColor = "#1DB954";
+    document.getElementById("playlistimg").style.opacity = "1";
+    document.getElementById("choosename").style.display = "flex";   
 
-
-
-
-document.getElementById("submitname").addEventListener("click", async function (event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    const create = {
-    "name": name
-    }
-    await fetch(baseURL + '/create', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(create)
-      })
-      .then(res => res.json())
-      .then(res => popularity(res)) 
-
-})
+    document.getElementById("submitname").addEventListener("click", async function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const create = {
+        "name": name
+        }
+        await fetch(baseURL + '/create', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(create)
+          })
+          .then(res => res.json())
+          .then(res => popularity(res)) 
+    })
+}

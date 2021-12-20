@@ -11,10 +11,10 @@ window.addEventListener("load", function () {
 
 window.onload = async function onPageLoad() {
     user(); 
-    playlistgenerator();
     getReleases();
     user(); 
     current();
+    playlistgenerator();
 }
 
 async function getReleases() {
@@ -71,25 +71,31 @@ async function current() {
 
 
 async function playlistgenerator() {
-
     console.log("Whut PT1");
     await fetch(baseURL + "/lastplaylist")
     .then((response) => response.json())
     .then((data) => {
-      console.log("Whut",data);
+console.log(data);
+
+document.getElementById('playlistname').innerHTML = data.name;
+document.getElementById('playlistowner').innerHTML = data.owner.display_name;
+document.getElementById('coveradded').src = data.images[0].url;
+document.getElementById('linktoplaylist').setAttribute("href", data.external_urls.spotify);
+        for(let i = 0; i<20; i++) {
+            document.getElementById("addedsongscontainer").insertAdjacentHTML('afterbegin', `
+                    <a href="./home"">
+                    <div>
+                    <img class="play" src="../images/play.png" alt="play">
+                    <img class="addedcovers" src="${data.tracks.items[i].track.album.images[0].url}" alt="cover">
+                    <div class="info">
+                    <h3>${data.tracks.items[i].track.artists[0].name}</h3>
+                    <p class="songname">${data.tracks.items[i].track.name}</p>
+                    </div>
+                    </div>
+                    </a>`);
+        }
       });
+
 }
 
- //   for(let i = 0; i<20; i++) {
-    //     document.getElementById("addedsongscontainer").insertAdjacentHTML('afterbegin', `
-    //             <a href="./home"">
-    //             <div>
-    //             <img class="play" src="../images/play.png" alt="play">
-    //             <img class="addedcovers" src="${data.bodycode[i].album.images[0].url}" alt="cover">
-    //             <div class="info">
-    //             <h3>${data.bodycode[i].artists[0].name}</h3>
-    //             <p class="songname">${data.bodycode[i].name}</p>
-    //             </div>
-    //             </div>
-    //             </a>`);
-    // }
+ 
