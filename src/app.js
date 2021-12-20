@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
 
 document.getElementById('loginbutton').addEventListener("click", async function() {
         window.open("https://otomusic.herokuapp.com/connect");
-        console.log(window.location);
+        window.location = ""
       });
 
 
