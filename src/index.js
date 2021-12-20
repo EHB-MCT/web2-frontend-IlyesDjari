@@ -12,6 +12,7 @@ window.addEventListener("load", function () {
 
 window.onload = function onPageLoad() {
 getReleases();
+user(); 
 current();
 playlistgenerator();
 }
@@ -38,7 +39,6 @@ async function getReleases() {
 
 async function current() {
     console.log("hello");
- 
      await fetch(baseURL + "/currentsong")
      .then((response) => response.json())
      .then((data) => {
@@ -50,6 +50,29 @@ async function current() {
             document.getElementById("imgcurrent").style.width = "10vw";
             document.getElementById("imgcurrent").style.opacity = "100%";
         }
+       });
+ }
+
+
+ async function user() {
+    console.log("hello");
+     await fetch(baseURL + "/getuser")
+     .then((response) => response.json())
+     .then((data) => {
+        const time = new Date().getHours();
+        document.getElementById("username").innerHTML = data.body.display_name; 
+        document.getElementById("userpicture").src = data.body.images[0].url
+
+        if (time < 12) {
+            document.getElementById("daytime").innerHTML = "Good morning, "
+        }
+        else if (time < 18) {
+            document.getElementById("daytime").innerHTML = "Good afternoon, "
+        }
+        else {
+            document.getElementById("daytime").innerHTML = "Good evening, "
+        }
+       console.log(data);
        });
  }
 
