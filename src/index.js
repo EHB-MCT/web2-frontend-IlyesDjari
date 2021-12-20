@@ -18,8 +18,6 @@ playlistgenerator();
 }
 
 async function getReleases() {
-   console.log("hello");
-
     await fetch(baseURL + "/newreleases")
     .then((response) => response.json())
     .then((data) => {
@@ -38,7 +36,6 @@ async function getReleases() {
 }
 
 async function current() {
-    console.log("hello");
      await fetch(baseURL + "/currentsong")
      .then((response) => response.json())
      .then((data) => {
@@ -55,7 +52,6 @@ async function current() {
 
 
  async function user() {
-    console.log("hello");
      await fetch(baseURL + "/getuser")
      .then((response) => response.json())
      .then((data) => {
@@ -72,17 +68,20 @@ async function current() {
         else {
             document.getElementById("daytime").innerHTML = "Good evening, "
         }
-       console.log(data);
        });
  }
 
 
-
-function reply_click(clicked_id) {
-    CHOICES.push(clicked_id);
-    console.log(CHOICES);
+ function handleClick(event) {
+    let buttonValue = event.target.parentElement.id;
+    CHOICES.push(buttonValue);
     genre();
-}
+  }
+  document.querySelector("#choices").addEventListener("click", handleClick);
+  
+
+
+
 
 function genre() {
     document.getElementById("choices").style.display = "none";
@@ -97,11 +96,7 @@ function genre() {
 }
 
 
-function reply_click2(clicked_id) {
-    CHOICES.push(clicked_id);
-    console.log(CHOICES);
-    mood();
-}
+
 
 function mood() {
     document.getElementById("choicesmood").style.display = "none";
@@ -129,6 +124,4 @@ for(let i = 0; i<20; i++) {
             </div>
             </a>`);
 }
-
-
 }
