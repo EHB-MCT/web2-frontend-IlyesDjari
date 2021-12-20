@@ -74,10 +74,11 @@ async function current() {
     let buttonValue = event.target.parentElement.id;
     console.log("You clicked this", buttonValue);
     if (CHOICES[0] == undefined) {
+        document.getElementById('genretxt').innerHTML = `${buttonValue}`;
     genre();
     CHOICES.push(buttonValue);
    } else if (CHOICES[0] !== undefined && CHOICES[1] == undefined && CHOICES[2] == undefined) {
-      
+    document.getElementById('moodtxt').innerHTML = `${buttonValue}`;
     if (buttonValue == "chill") {
         let energy = Math.ceil(Math.random()*33)
         CHOICES.push(energy);
@@ -91,7 +92,7 @@ async function current() {
        mood();
 
    } else {
-    
+    document.getElementById('knowntxt').innerHTML = `${buttonValue}`;
     if (buttonValue == "indie") {
         let popularity = Math.ceil(Math.random()*33)
         CHOICES.push(popularity);
@@ -196,7 +197,6 @@ async function addtoserver(create) {
 
 
 function showName() {
-
     document.getElementById("choicespopularity").style.display = "none";
     document.getElementById("lengthtimeline").style.backgroundColor = "#1DB954";
     document.getElementById("lengthtimeline").style.width = "57.5vw";
@@ -205,7 +205,6 @@ function showName() {
     document.getElementById("playlist").style.backgroundColor = "#1DB954";
     document.getElementById("playlistimg").style.opacity = "1";
     document.getElementById("choosename").style.display = "flex";   
-
     document.getElementById("submitname").addEventListener("click", async function (event) {
         event.preventDefault();
         const name = document.getElementById("name").value;

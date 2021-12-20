@@ -552,10 +552,11 @@ margin: 1.5vh auto 0 auto;
 display: block;
 }
 
-#genretxt {
+.genretxt {
     top: 6.5vh;
+    margin-left: -0.5vw;
     text-align: center;
-    width: 100%;
+    width: 150%;
     position: absolute;
     font-weight: 500;
 }
