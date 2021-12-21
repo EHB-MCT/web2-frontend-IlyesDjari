@@ -83,7 +83,7 @@ document.getElementById('coveradded').src = data.images[0].url;
 document.getElementById('linktoplaylist').setAttribute("href", data.external_urls.spotify);
         for(let i = 0; i<20; i++) {
             document.getElementById("addedsongscontainer").insertAdjacentHTML('afterbegin', `
-                    <a href="./home"">
+                    <a href="${data.tracks.items[i].track.external_urls.spotify}">
                     <div>
                     <img class="play" src="../images/play.png" alt="play">
                     <img class="addedcovers" src="${data.tracks.items[i].track.album.images[0].url}" alt="cover">
