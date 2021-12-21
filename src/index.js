@@ -123,15 +123,62 @@ async function current() {
   document.querySelector("#choices").addEventListener("click", handleClick);
   document.querySelector("#choicesmood").addEventListener("click", handleClick);
   document.querySelector("#choicespopularity").addEventListener("click", handleClick);
+  document.querySelector("#back").addEventListener("click", back);
 
+
+function back() {
+    if(CHOICES[1] == undefined) {
+        // Choice of doing this way instead of simple window reload for good looking transitions incorporation
+        CHOICES.pop();
+        document.getElementById("choices").style.display = "flex";
+        document.getElementById("back").style.display = "none";
+        document.getElementById("lengthtimeline").style.backgroundColor = "#1DB954";
+        document.getElementById("lengthtimeline").style.width = "6.5vw";
+        document.getElementById("genre").style.transform = "scale(1.1)";
+        document.getElementById("mood").style.transform = "scale(1)";
+        document.getElementById("genre").style.backgroundColor = "#1DB954";
+        document.getElementById("mood").style.backgroundColor = "#262626";
+        document.getElementById("moodimg").style.opacity = "0.5";
+        document.getElementById("choicesmood").style.display = "none";
+        document.getElementById("generate").style.display = "flex";
+        document.getElementById('genretxt').innerHTML = "Genre";
+
+
+    } else if( CHOICES[0] !== undefined && CHOICES[1] !== undefined && CHOICES[2] == undefined) {
+        CHOICES.pop();
+        document.getElementById("choicesmood").style.display = "flex";
+        document.getElementById("lengthtimeline").style.backgroundColor = "#A065FF";
+        document.getElementById("lengthtimeline").style.width = "22.5vw";
+        document.getElementById("mood").style.transform = "scale(1.1)";
+        document.getElementById("popularity").style.transform = "scale(1)";
+        document.getElementById("genre").style.backgroundColor = "#1DB954";
+        document.getElementById("popularity").style.backgroundColor = "#262626";
+        document.getElementById("popularityimg").style.opacity = "0.5";
+        document.getElementById("choicespopularity").style.display = "none";
+        document.getElementById('genretxt').innerHTML = "Genre";
+    } else {
+        CHOICES.pop();
+        document.getElementById("choicespopularity").style.display = "flex";
+        document.getElementById("lengthtimeline").style.backgroundColor = "#FF7448";
+        document.getElementById("lengthtimeline").style.width = "40vw";
+        document.getElementById("popularity").style.transform = "scale(1.1)";
+        document.getElementById("playlist").style.transform = "scale(1)";
+        document.getElementById("playlist").style.backgroundColor = "#262626";
+        document.getElementById("playlistimg").style.opacity = "0.5";
+        document.getElementById("choosename").style.display = "none";   
+    }
+    
+
+
+}
 
 function genre() {
     document.getElementById("choices").style.display = "none";
+    document.getElementById("back").style.display = "flex";
     document.getElementById("lengthtimeline").style.backgroundColor = "#A065FF";
     document.getElementById("lengthtimeline").style.width = "22.5vw";
     document.getElementById("genre").style.transform = "scale(1)";
     document.getElementById("mood").style.transform = "scale(1.1)";
-    document.getElementById("mood").style.transition = "all 1s";
     document.getElementById("mood").style.backgroundColor = "#A065FF";
     document.getElementById("moodimg").style.opacity = "1";
     document.getElementById("choicesmood").style.display = "flex";
