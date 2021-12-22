@@ -1,3 +1,5 @@
+"use strict"
+
 const baseURL = "https://otomusic.herokuapp.com";
 let CHOICES = [];
 

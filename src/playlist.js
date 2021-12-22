@@ -1,3 +1,6 @@
+"use strict"
+
+
 const baseURL = "https://otomusic.herokuapp.com";
 
 

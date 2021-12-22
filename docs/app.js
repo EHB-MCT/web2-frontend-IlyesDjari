@@ -7,6 +7,7 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/app.js":
@@ -15,7 +16,7 @@
   \********************/
 /***/ (() => {
 
-eval("const baseURL = \"https://otomusic.herokuapp.com\";\r\n\r\ndocument.documentElement.addEventListener(\"load\", function() {\r\n\tdocument.getElementById(\"loader\").style.display = \"block\";\r\n});\r\n\r\nwindow.addEventListener(\"load\", function() {\r\n\tdocument.getElementById(\"loader\").style.display = \"none\";\r\n});\r\n\r\n\r\ndocument.getElementById('loginbutton').addEventListener(\"click\", async function() {\r\n\twindow.open(\"https://otomusic.herokuapp.com/connect\");\r\n});\n\n//# sourceURL=webpack://web2-frontend-ilyesdjari/./src/app.js?");
+eval("\r\n\r\n\r\ndocument.documentElement.addEventListener(\"load\", function() {\r\n\tdocument.getElementById(\"loader\").style.display = \"block\";\r\n});\r\n\r\nwindow.addEventListener(\"load\", function() {\r\n\tdocument.getElementById(\"loader\").style.display = \"none\";\r\n});\r\n\r\n\r\ndocument.getElementById('loginbutton').addEventListener(\"click\", async function() {\r\n\twindow.open(\"https://otomusic.herokuapp.com/connect\");\r\n});\n\n//# sourceURL=webpack://web2-frontend-ilyesdjari/./src/app.js?");
 
 /***/ })
 

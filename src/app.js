@@ -1,4 +1,5 @@
-const baseURL = "https://otomusic.herokuapp.com";
+"use strict"
+
 
 document.documentElement.addEventListener("load", function() {
 	document.getElementById("loader").style.display = "block";
