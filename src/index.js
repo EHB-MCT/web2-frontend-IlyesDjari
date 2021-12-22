@@ -70,8 +70,10 @@ async function current() {
      .then((response) => response.json())
      .then((data) => {
         const time = new Date().getHours();
+        console.log(data);
         document.getElementById("username").innerHTML = data.body.display_name; 
         document.getElementById("userpicture").src = data.body.images[0].url
+        document.getElementById('toProfile').setAttribute("href",data.body.external_urls.spotify );
         if (time < 12) {
             document.getElementById("daytime").innerHTML = "Good morning, "
         }
