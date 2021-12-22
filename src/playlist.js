@@ -23,7 +23,7 @@ async function getReleases() {
     .then((data) => {
         for(let i = 0; i<5; i++) {
         document.getElementById("release").insertAdjacentHTML('afterbegin', `
-        <a href="${data.body.albums.items[i].external_urls.spotify}"">
+        <a href="${data.body.albums.items[i].external_urls.spotify}" target="_blank">
         <div>
         <img src="${data.body.albums.items[i].images[0].url}" alt="cover">
         <h3>${data.body.albums.items[i].artists[0].name}</h3>
@@ -84,7 +84,7 @@ document.getElementById('coveradded').src = data.images[0].url;
 document.getElementById('linktoplaylist').setAttribute("href", data.external_urls.spotify);
         for(let i = 0; i<20; i++) {
             document.getElementById("addedsongscontainer").insertAdjacentHTML('afterbegin', `
-                    <a href="${data.tracks.items[i].track.external_urls.spotify}">
+                    <a href="${data.tracks.items[i].track.external_urls.spotify} target="_blank"">
                     <div>
                     <img class="play" src="../images/play.png" alt="play">
                     <img class="addedcovers" src="${data.tracks.items[i].track.album.images[0].url}" alt="cover">
