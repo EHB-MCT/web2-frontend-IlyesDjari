@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("const baseURL = \"https://otomusic.herokuapp.com\";\r\n\r\ndocument.documentElement.addEventListener(\"load\", function () {\r\n    document.getElementById(\"loader\").style.display = \"block\";\r\n});\r\n\r\nwindow.addEventListener(\"load\", function () {\r\n    document.getElementById(\"loader\").style.display = \"none\";\r\n});\r\n\r\n\r\ndocument.getElementById('loginbutton').addEventListener(\"click\", async function() {\r\n        window.open(\"https://otomusic.herokuapp.com/connect\");\r\n      });\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://web2-frontend-ilyesdjari/./src/app.js?");
+eval("const baseURL = \"https://otomusic.herokuapp.com\";\r\n\r\ndocument.documentElement.addEventListener(\"load\", function() {\r\n\tdocument.getElementById(\"loader\").style.display = \"block\";\r\n});\r\n\r\nwindow.addEventListener(\"load\", function() {\r\n\tdocument.getElementById(\"loader\").style.display = \"none\";\r\n});\r\n\r\n\r\ndocument.getElementById('loginbutton').addEventListener(\"click\", async function() {\r\n\twindow.open(\"https://otomusic.herokuapp.com/connect\");\r\n});\n\n//# sourceURL=webpack://web2-frontend-ilyesdjari/./src/app.js?");
 
 /***/ })
 
