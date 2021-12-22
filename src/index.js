@@ -49,7 +49,7 @@ async function getReleases() {
 //       });
 // }
 
-async function current() {
+ setInterval( async function current() {
      await fetch(baseURL + "/currentsong")
      .then((response) => response.json())
      .then((data) => {
@@ -62,7 +62,7 @@ async function current() {
             document.getElementById("imgcurrent").style.opacity = "100%";
         }
        });
- }
+ },1000)
 
 
  async function user() {
@@ -284,3 +284,4 @@ function showName() {
           .then(res => popularity(res)) 
     })
 }
+
