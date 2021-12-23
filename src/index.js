@@ -10,14 +10,11 @@ document.documentElement.addEventListener("load", function() {
 });
 
 window.addEventListener("load", function() {
-	document.getElementById("loader").style.display = "none";
-});
-
-window.onload = function onPageLoad() {
 	getReleases();
 	user();
 	latestPlaylists();
-}
+	document.getElementById("loader").style.display = "none";
+});
 
 async function getReleases() {
 	await fetch(baseURL + "/newreleases")
@@ -42,7 +39,7 @@ async function latestPlaylists() {
     .then((response) => response.json())
     .then((data) => {
         console.log("Received data", data);
-        for(let i = 0; i<6; i++) {
+        for(let i = 0; i<data.length; i++) {
         document.getElementById("latestgenerated").insertAdjacentHTML('afterbegin', `
 		<a href="${data[i].external_urls.spotify}" target="_blank">
         <div id="lastestplaylistadded">

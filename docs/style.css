@@ -637,6 +637,7 @@
   #latestgenerated {
     display: flex;
     flex-direction: row;
+    width: 70vw;
     gap: 2vw;
   }
   
