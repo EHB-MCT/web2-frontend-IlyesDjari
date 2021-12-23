@@ -810,6 +810,15 @@
   #addedsongscontainer div > .info .songname {
     font-size: 1.5vh;
   }
+
+  .artistname {
+    width: 5vw;
+  }
+
+  .songname {
+    align-content: center;
+    width: 7vw;
+  }
   
   #addedsongscontainer div > .info .duration {
     font-size: 1.5vh;

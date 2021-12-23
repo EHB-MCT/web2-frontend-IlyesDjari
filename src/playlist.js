@@ -9,16 +9,12 @@ document.documentElement.addEventListener("load", function() {
 });
 
 window.addEventListener("load", function() {
+	user();
+	getReleases();
+	playlistgenerator();
 	document.getElementById("loader").style.display = "none";
 });
 
-window.onload = async function onPageLoad() {
-	user();
-	getReleases();
-	user();
-	playlistgenerator();
-	current();
-}
 
 async function getReleases() {
 	await fetch(baseURL + "/newreleases")
@@ -88,7 +84,7 @@ async function playlistgenerator() {
                     <img class="play" src="../images/play.png" alt="play">
                     <img class="addedcovers" src="${data.tracks.items[i].track.album.images[0].url}" alt="cover">
                     <div class="info">
-                    <h3>${data.tracks.items[i].track.artists[0].name}</h3>
+                    <h3 class="artistname">${data.tracks.items[i].track.artists[0].name}</h3>
                     <p class="songname">${data.tracks.items[i].track.name}</p>
                     </div>
                     </div>
