@@ -148,6 +148,7 @@ function back() {
 		document.getElementById('genretxt').innerHTML = "Genre";
 
 
+
 	} else if (CHOICES[0] !== undefined && CHOICES[1] !== undefined && CHOICES[2] == undefined) {
 		CHOICES.pop();
 		document.getElementById("choicesmood").style.display = "flex";
@@ -159,6 +160,7 @@ function back() {
 		document.getElementById("popularity").style.backgroundColor = "#262626";
 		document.getElementById("popularityimg").style.opacity = "0.5";
 		document.getElementById("choicespopularity").style.display = "none";
+		document.getElementById('backtxt').innerText = "Back to genre";
 		document.getElementById('genretxt').innerHTML = "Genre";
 	} else {
 		CHOICES.pop();
@@ -170,6 +172,7 @@ function back() {
 		document.getElementById("playlist").style.backgroundColor = "#262626";
 		document.getElementById("playlistimg").style.opacity = "0.5";
 		document.getElementById("choosename").style.display = "none";
+		document.getElementById('backtxt').innerText = "Back to mood";
 	}
 }
 
@@ -184,6 +187,7 @@ function genre() {
 	document.getElementById("moodimg").style.opacity = "1";
 	document.getElementById("choicesmood").style.display = "flex";
 	document.getElementById("generate").style.display = "none";
+	
 }
 
 function mood() {
@@ -195,6 +199,7 @@ function mood() {
 	document.getElementById("popularity").style.backgroundColor = "#FF7448";
 	document.getElementById("choicespopularity").style.display = "flex";
 	document.getElementById("popularityimg").style.opacity = "1";
+	document.getElementById('backtxt').innerText = "Back to mood";
 }
 
 async function popularity(res) {
@@ -264,6 +269,7 @@ function showName() {
 	document.getElementById("playlist").style.backgroundColor = "#1DB954";
 	document.getElementById("playlistimg").style.opacity = "1";
 	document.getElementById("choosename").style.display = "flex";
+	document.getElementById('backtxt').innerText = "Back to known";
 	document.getElementById("submitname").addEventListener("click", async function(event) {
 		event.preventDefault();
 		const name = document.getElementById("name").value;
