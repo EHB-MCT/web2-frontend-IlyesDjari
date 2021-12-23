@@ -875,6 +875,7 @@
   }
   
   #back {
+    width: 12vw;
     padding-top: 1vh;
     display: none;
     flex-direction: row;
